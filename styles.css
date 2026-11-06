@@ -687,3 +687,569 @@ section[id],
     scroll-behavior: auto !important;
   }
 }
+/* ============================================================
+   18. SALES PAGE  (/lose-10-in-3/)
+   Reuses tokens, buttons, container and nav from above.
+   ============================================================ */
+
+/* ---------- Shared helpers ---------- */
+.text-center { text-align: center; }
+
+.section-alt {
+  background-color: var(--cream-dark);
+  padding-block: var(--space-2xl);
+  border-top: 1px solid var(--gold-soft);
+}
+
+/* Long-form body copy: left aligned, generous measure */
+.prose {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+.prose p { margin-bottom: 1.15em; }
+.prose p:last-child { margin-bottom: 0; }
+
+.prose--tight p { margin-bottom: 0.85em; }
+
+.prose--center {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-block: var(--space-lg);
+}
+
+.prose h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--forest);
+  margin-top: var(--space-lg);
+  margin-bottom: 0.5rem;
+}
+
+.prose h3:first-child { margin-top: 0; }
+
+.section-green .prose { color: var(--cream); }
+.section-green .prose h3 { color: var(--gold); }
+
+.prose-close {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--forest);
+  margin-block: var(--space-lg);
+}
+
+.section-green .prose-close { color: var(--cream); }
+
+/* Big statement lines — the copy deck's bold claims */
+.statement {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3.4vw, 2rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--forest);
+  text-align: center;
+  margin-block: var(--space-lg);
+  padding-block: var(--space-sm);
+  border-top: 1px solid var(--gold-soft);
+  border-bottom: 1px solid var(--gold-soft);
+}
+
+.section-green .statement {
+  color: var(--gold);
+  border-color: rgba(201, 169, 110, 0.4);
+}
+
+/* ---------- 18.1 Sales hero ---------- */
+.sales-hero {
+  padding-block: var(--space-xl) var(--space-2xl);
+  background-color: var(--cream);
+}
+
+.sales-hero-head {
+  text-align: center;
+  max-width: 860px;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.sales-kicker {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.7;
+  margin-bottom: var(--space-sm);
+}
+
+.sales-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 11vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--forest);
+  margin-bottom: var(--space-md);
+}
+
+.sales-sub {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.1875rem);
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.sales-hero-cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+/* ---------- 18.2 Cards ---------- */
+.card {
+  background-color: var(--cream-dark);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  margin-block: var(--space-lg);
+}
+
+.section-green .card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-left-color: var(--gold);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: var(--forest);
+  margin-bottom: var(--space-md);
+}
+
+.section-green .card-title { color: var(--gold); }
+
+/* ---------- 18.3 Lists ---------- */
+.checklist,
+.deliverables {
+  list-style: none;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.85em;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.checklist li:last-child { margin-bottom: 0; }
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--gold);
+}
+
+/* "Who this is not for" — muted, a dash not a dot */
+.checklist--muted li { opacity: 0.85; }
+
+.checklist--muted li::before {
+  width: 12px;
+  height: 2px;
+  border-radius: 0;
+  top: 0.85em;
+  background-color: var(--gold);
+  opacity: 0.6;
+}
+
+.deliverables li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1em;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.deliverables li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--gold);
+}
+
+.deliverables strong {
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ---------- 18.4 Who this is for ---------- */
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.who-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.who-card--not {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: rgba(245, 239, 230, 0.3);
+}
+
+.section-green .who-card .checklist li { color: var(--cream); }
+.section-green .who-card .who-card--not .card-title { color: var(--cream); }
+
+/* ---------- 18.5 Months ---------- */
+.month-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.month-card {
+  background-color: var(--cream-dark);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+
+.month-num {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.month-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: var(--forest);
+  margin-bottom: var(--space-md);
+}
+
+.month-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--forest);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--gold-soft);
+}
+
+/* ---------- 18.6 Logo strip ---------- */
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem 2rem;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(201, 169, 110, 0.35);
+}
+
+.logo-strip figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.logo-strip img {
+  max-height: 34px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.6);
+  opacity: 0.6;
+  transition: opacity var(--transition);
+}
+
+.logo-strip figure:hover img {
+  opacity: 0.9;
+}
+
+.logo-strip figcaption {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--cream);
+  opacity: 0.55;
+  max-width: 130px;
+}
+
+/* ---------- 18.7 Price ---------- */
+.price-intro {
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.price-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.7;
+  margin-bottom: var(--space-sm);
+}
+
+.price-lead {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--forest);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem) var(--space-md);
+  text-align: center;
+  box-shadow: 0 16px 32px rgba(13, 59, 42, 0.15);
+}
+
+.price-box .btn {
+  margin-top: auto;
+}
+
+.price-main {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 8vw, 4rem);
+  line-height: 1;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+}
+
+.price-sub {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  opacity: 0.8;
+  margin-top: 0.35rem;
+}
+
+.price-close {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.price-rise {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--forest);
+  opacity: 0.85;
+}
+
+.price-rise + .price-rise {
+  margin-top: 0.35rem;
+}
+
+/* ---------- 18.8 Countdown ---------- */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.5rem, 2.5vw, 1rem);
+  margin-block: var(--space-md) var(--space-lg);
+}
+
+.countdown-unit {
+  min-width: clamp(58px, 16vw, 78px);
+  padding: 0.7rem 0.4rem 0.6rem;
+  background-color: #ffffff;
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.countdown-num {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.6;
+}
+
+/* Dark variant — used inside the green "Last thing" section */
+.section-green .countdown-unit {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(201, 169, 110, 0.6);
+}
+
+.section-green .countdown-num {
+  color: var(--gold);
+}
+
+.section-green .countdown-label {
+  color: var(--cream);
+  opacity: 0.65;
+}
+
+.countdown.is-closed {
+  display: block;
+}
+
+.countdown-closed {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--forest);
+}
+
+.section-green .countdown-closed {
+  color: var(--gold);
+}
+
+/* ---------- 18.9 FAQ ---------- */
+.faq {
+  margin-top: var(--space-lg);
+  border-top: 1px solid var(--gold-soft);
+}
+
+.faq-item {
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--gold-soft);
+}
+
+.faq-q {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.faq-a {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+.faq-a + .faq-a { margin-top: 0.75rem; }
+
+/* ---------- 18.10 Close ---------- */
+.close-line {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1.25;
+  color: var(--gold);
+  margin-block: var(--space-lg) var(--space-sm);
+}
+
+/* ---------- 18.11 Sales page responsive ---------- */
+@media (min-width: 768px) {
+  .who-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .month-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+}
+/* ============================================================
+   19. SECTION RHYTHM
+   Guarantees vertical padding on every <section> in <main>,
+   including the plain ones that had none. More specific
+   class-based padding (landing page) still wins.
+   ============================================================ */
+
+main > section {
+  padding-block: var(--space-2xl);
+}
+
+main > section.sales-hero {
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.section-green,
+.section-alt {
+  padding-block: var(--space-2xl);
+}
+
+/* Price boxes side by side from tablet up */
+@media (min-width: 768px) {
+  .price-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
