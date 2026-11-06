@@ -324,28 +324,48 @@ section[id],
   margin-bottom: var(--space-md);
 }
 
+/* Label → logo → outlet name, per logo */
 .logo-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 1.5rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.logo-figure {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem 2.5rem;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: center;
 }
 
 .logo-item {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-  color: var(--forest);
-  opacity: 0.55;
+  width: 100%;
+  max-width: 150px;
+  max-height: 50px;
+  height: auto;
+  object-fit: contain;
   filter: grayscale(1);
+  opacity: 0.6;
   transition: opacity var(--transition);
-  white-space: nowrap;
 }
 
-.logo-item:hover {
-  opacity: 0.9;
+.logo-figure:hover .logo-item {
+  opacity: 0.95;
+}
+
+.logo-figure figcaption {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--forest);
+  opacity: 0.6;
 }
 
 /* ---------- 7. WORK WITH ME ---------- */
@@ -610,6 +630,17 @@ section[id],
 
   .hero-image img {
     max-height: 600px;
+  }
+
+  /* One greyscale row of five logo + caption pairs */
+  .logo-row {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .logo-item {
+    max-width: 135px;
+    max-height: 46px;
   }
 
   .testimonial-grid {
