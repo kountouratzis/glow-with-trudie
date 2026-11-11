@@ -490,38 +490,89 @@ section[id],
 
 .form-embed {
   margin-top: var(--space-md);
-  background-color: #ffffff;
-  border: 1px solid var(--gold-soft);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* Brand overrides for the Kit form */
+.form-embed .formkit-form {
+  border: 1px solid var(--gold-soft) !important;
+  border-radius: var(--radius-lg) !important;
+  background-color: #ffffff !important;
+  max-width: 100% !important;
   box-shadow: 0 16px 32px rgba(13, 59, 42, 0.08);
 }
 
-.form-embed iframe {
-  display: block;
-  width: 100%;
-  min-height: 620px;
-  border: 0;
-  background-color: #ffffff;
+.form-embed .formkit-form [data-style="minimal"] {
+  padding: clamp(1.5rem, 5vw, 2.5rem) !important;
 }
 
-.form-fallback {
-  margin-top: var(--space-md);
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--forest);
-  opacity: 0.8;
+.form-embed .formkit-header {
+  margin: 0 0 var(--space-sm) 0 !important;
 }
 
-.form-fallback a {
-  color: var(--forest);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.form-embed .formkit-header h2 {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--forest) !important;
+  font-size: clamp(1.6rem, 4vw, 2rem) !important;
+  line-height: 1.2 !important;
 }
 
-.form-fallback a:hover {
-  color: var(--gold);
+.form-embed .formkit-subheader {
+  margin: 0 0 var(--space-md) 0 !important;
+}
+
+.form-embed .formkit-subheader p {
+  font-family: var(--font-body) !important;
+  color: var(--forest) !important;
+  opacity: 0.7 !important;
+  font-size: 1rem !important;
+}
+
+.form-embed .formkit-input {
+  font-family: var(--font-body) !important;
+  border-color: var(--gold-soft) !important;
+  border-radius: var(--radius) !important;
+  padding: 0.85rem 1rem !important;
+  font-size: 0.9375rem !important;
+}
+
+.form-embed .formkit-input:focus {
+  border-color: var(--gold) !important;
+}
+
+.form-embed .formkit-submit {
+  background-color: var(--forest) !important;
+  border-radius: 50px !important;
+  font-family: var(--font-body) !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+}
+
+.form-embed .formkit-submit > span {
+  padding: 0.9rem 2rem !important;
+}
+
+.form-embed .formkit-submit:hover > span {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.form-embed .formkit-guarantee {
+  font-family: var(--font-body) !important;
+  color: var(--forest) !important;
+  opacity: 0.6 !important;
+  font-size: 0.75rem !important;
+}
+
+.form-embed .formkit-powered-by-convertkit-container {
+  margin-bottom: 0 !important;
+}
+
+.form-embed .formkit-powered-by-convertkit {
+  opacity: 0.4 !important;
 }
 
 /* ---------- 13. FOOTER ---------- */
