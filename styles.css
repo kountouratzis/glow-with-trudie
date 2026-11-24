@@ -268,28 +268,6 @@ section[id],
   margin-bottom: var(--space-lg);
 }
 
-.hero-pain-points {
-  margin-bottom: var(--space-lg);
-}
-
-.hero-pain-points p {
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.8;
-  color: var(--ink);
-}
-
-.hero-close {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: var(--forest);
-  margin-bottom: var(--space-lg);
-  padding-left: 1rem;
-  border-left: 3px solid var(--gold);
-}
-
 .hero-image {
   order: -1; /* photo above the fold on mobile */
 }
@@ -306,7 +284,7 @@ section[id],
 
 /* ---------- 6. AS SEEN IN ---------- */
 .as-seen-in {
-  background-color: var(--cream-dark);
+  background-color: #f6efe7;
   padding-block: var(--space-lg);
   border-top: 1px solid var(--gold-soft);
   border-bottom: 1px solid var(--gold-soft);
@@ -1144,19 +1122,6 @@ section[id],
   margin-top: var(--space-lg);
 }
 
-.price-rise {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--forest);
-  opacity: 0.85;
-}
-
-.price-rise + .price-rise {
-  margin-top: 0.35rem;
-}
-
 /* ---------- 18.8 Countdown ---------- */
 .countdown {
   display: flex;
@@ -1382,4 +1347,278 @@ main > section.sales-hero {
   #what-changes .testimonial-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* ============================================================
+   21. HERO SPLIT — "This is for you" / "What it is"
+   ============================================================ */
+
+.split-section {
+  background-color: var(--cream-dark);
+  border-top: 1px solid var(--gold-soft);
+  border-bottom: 1px solid var(--gold-soft);
+  padding-block: var(--space-2xl);
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.split-col--pain {
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--gold);
+}
+
+/* Left column: eyebrow + bullets */
+.pain-list-title {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.75;
+  margin-bottom: var(--space-md);
+}
+
+.pain-list {
+  list-style: none;
+  margin-bottom: var(--space-lg);
+}
+
+.pain-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 1em;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.pain-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pain-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gold);
+}
+
+.split-close {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--forest);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--gold-soft);
+}
+
+/* Right column: headings + copy */
+.split-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--forest);
+  margin-bottom: var(--space-md);
+}
+
+.split-minor-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: var(--forest);
+  margin-top: var(--space-md);
+  margin-bottom: 0.5rem;
+}
+
+.split-btn {
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .split-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+/* ============================================================
+   22. WAITLIST PERKS (join section)
+   ============================================================ */
+
+.waitlist-perks {
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 32px rgba(13, 59, 42, 0.06);
+}
+
+.waitlist-perks-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: var(--forest);
+  margin-bottom: var(--space-sm);
+}
+
+.waitlist-perks-list {
+  list-style: none;
+}
+
+.waitlist-perks-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.7em;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.waitlist-perks-list li:last-child {
+  margin-bottom: 0;
+}
+
+.waitlist-perks-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 11px;
+  height: 2px;
+  background-color: var(--gold);
+}
+
+.waitlist-perks-close {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--gold-soft);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--forest);
+}
+/* ============================================================
+   22. SALES PAGE UPDATES
+   Coloured date pills, full program name, section CTAs,
+   "investments" start line, and the FAQ close block.
+   ============================================================ */
+
+/* ---------- 22.1 Date pills (overrides .sales-kicker) ---------- */
+.sales-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 1;
+  margin-bottom: var(--space-md);
+}
+
+.kicker-pill {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+}
+
+.kicker-pill--start {
+  background-color: var(--gold);
+  color: var(--forest-deep);
+}
+
+.kicker-pill--close {
+  background-color: var(--forest);
+  color: var(--cream);
+}
+
+/* ---------- 22.2 Full program name under the title ---------- */
+.sales-title-alt {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.8vw, 1.6rem);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--forest);
+  opacity: 0.8;
+  margin-bottom: var(--space-md);
+}
+
+/* ---------- 22.3 Section-level CTA ---------- */
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* ---------- 22.4 "We start…" line in the investments section ---------- */
+.price-start {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3.6vw, 1.9rem);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--forest);
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+/* ---------- 22.5 FAQ close block ---------- */
+.faq-close {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  text-align: center;
+}
+
+.faq-close-body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--ink);
+  max-width: 620px;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+}
+
+.faq-close-line {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3.6vw, 1.9rem);
+  line-height: 1.3;
+  color: var(--forest);
+  margin-bottom: var(--space-md);
+}
+/* ============================================================
+   23. QUESTIONS — custom background
+   ============================================================ */
+
+#questions.section-alt {
+  background-color: #F6EFE7;
 }
