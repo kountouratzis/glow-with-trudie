@@ -1782,3 +1782,21 @@ main > section.sales-hero {
   padding-right: 2rem !important;
   line-height: 1.2 !important;
 }
+/* ============================================================
+   27. HERO SUBTITLE (h2 under the h1)
+   Renders "Without starving yourself…" as a smaller supporting
+   line beneath the hero headline.
+   ============================================================ */
+
+.hero-copy h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: var(--forest);
+  opacity: 0.85;
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+}
