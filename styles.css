@@ -284,7 +284,7 @@ section[id],
 
 /* ---------- 6. AS SEEN IN ---------- */
 .as-seen-in {
-  background-color: #f6efe7;
+  background-color: #eee3d6;
   padding-block: var(--space-lg);
   border-top: 1px solid var(--gold-soft);
   border-bottom: 1px solid var(--gold-soft);
@@ -1621,4 +1621,164 @@ main > section.sales-hero {
 
 #questions.section-alt {
   background-color: #F6EFE7;
+}
+/* ============================================================
+   24. HOMEPAGE UPDATES
+   Hero CTA spacing, 618px full-width forms, podcast + speaking
+   background/colour overrides.
+   ============================================================ */
+
+/* ---------- 24.1 Space above hero "Work with me" ---------- */
+.hero-copy .btn-primary {
+  margin-top: 30px;
+}
+
+/* ---------- 24.2 Form width + full-width fields (both forms) ---------- */
+.form-embed {
+  max-width: 618px;
+}
+
+.form-embed .formkit-fields {
+  display: block !important;
+}
+
+.form-embed .formkit-field {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
+}
+
+.form-embed .formkit-input {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.form-embed .formkit-submit {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 15px 0 !important;
+}
+
+/* ---------- 24.3 Podcast — light cream background ---------- */
+.podcast {
+  background-color: #eee3d6;
+  color: var(--ink);
+}
+
+.podcast .section-headline {
+  color: var(--forest);
+}
+
+.podcast .section-body {
+  color: var(--ink);
+}
+
+/* ---------- 24.4 Speaking — deep green #053B2B ---------- */
+.speaking {
+  background-color: #053B2B;
+  color: var(--cream);
+}
+
+.speaking .section-headline {
+  color: var(--cream);
+}
+
+.speaking .section-body {
+  color: var(--cream);
+}
+
+.speaking .btn-primary {
+  background-color: var(--gold);
+  color: var(--forest);
+  border-color: var(--gold);
+}
+
+.speaking .btn-primary:hover {
+  background-color: #d6b97e;
+  border-color: #d6b97e;
+}
+/* ============================================================
+   25. FORM FINAL TWEAKS
+   14px top/bottom padding inside the subscribe button, and a
+   single gold border colour on every form field.
+   ============================================================ */
+
+/* ---------- 25.1 Subscribe button — 14px top & bottom padding ---------- */
+.form-embed .formkit-submit > span {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* ---------- 25.2 All form fields — gold border only ---------- */
+
+/* Idle state: replace the inline grey with gold */
+.form-embed .formkit-input {
+  border: 1px solid var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+/* Focus / hover / active: keep it gold, no blue or grey */
+.form-embed .formkit-input:hover,
+.form-embed .formkit-input:focus,
+.form-embed .formkit-input:active {
+  border-color: var(--gold) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Selects and textareas, if any are ever added */
+.form-embed select,
+.form-embed textarea {
+  border: 1px solid var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+.form-embed select:focus,
+.form-embed textarea:focus {
+  border-color: var(--gold) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+/* ============================================================
+   26. FORM — BUTTON BORDER + SUBSCRIBE PADDING (override Kit JS)
+   ID-scoped so it outranks the stylesheet ck.5.js injects.
+   ============================================================ */
+
+/* ---------- 26.1 Button: no borders at all ---------- */
+#work-with-me .form-embed .formkit-submit,
+#join-form  .form-embed .formkit-submit,
+#work-with-me .form-embed button.formkit-submit,
+#join-form  .form-embed button.formkit-submit {
+  border: 0 !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ---------- 26.2 Button: let the span define the height ---------- */
+#work-with-me .form-embed .formkit-submit,
+#join-form  .form-embed .formkit-submit {
+  padding: 0 !important;
+  height: auto !important;
+  line-height: 1.2 !important;
+}
+
+/* ---------- 26.3 Subscribe text: 14px top & bottom ---------- */
+#work-with-me .form-embed .formkit-submit > span,
+#join-form  .form-embed .formkit-submit > span {
+  display: block !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  line-height: 1.2 !important;
 }
